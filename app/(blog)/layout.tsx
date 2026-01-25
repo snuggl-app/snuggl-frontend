@@ -1,16 +1,16 @@
-import Header from "@/components/site/Header";
+import BlogHeader from "@/components/blog/Header";
 import Footer from "@/components/Footer";
 
-export default function SiteLayout({
+export default function BlogLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <section className="px-40">
-      <Header />
+    <>
+      <BlogHeader />
       <main className="min-h-screen">{children}</main>
       <Footer />
-    </section>
+    </>
   );
 }

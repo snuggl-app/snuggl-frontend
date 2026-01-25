@@ -1,0 +1,110 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title_1": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Adotta a distanza."
+			},
+			"title_2": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Crea a un legame."
+			},
+			"paragraph": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Unisciti alla community che sta cambiando il futuro del\nbenessere animale in Italia. Dona amore, ricevi fusa."
+			},
+			"primary_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "shelf",
+				"type": "Text"
+			},
+			"button_link": {
+				"key": "ab069816-1796-443c-96ee-d6b034af40dc",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "park",
+					"variant": "Primary"
+				}
+			},
+			"secondary_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "distant",
+				"type": "Text"
+			},
+			"button": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"button_text",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Scopri di più"
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"button_link",
+								{
+									"key": "d6b0adb1-67e6-4dc3-839b-539d8c4ee45c",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "AnyLink",
+										"kind": "any",
+										"variant": "Secondary"
+									}
+								}
+							],
+							[
+								"button_text",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Come funziona"
+								}
+							]
+						]
+					}
+				]
+			},
+			"hero_image": {
+				"__TYPE__": "ImageContent",
+				"provider": "imgix",
+				"url": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxOXx8ZG9nfGVufDB8fHx8MTc2OTMwMjAxMnww&ixlib=rb-4.1.0&q=85",
+				"alt": "adult chocolate Labrador retriever",
+				"origin": {
+					"id": "v3-zcCWMjgM",
+					"url": "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxOXx8ZG9nfGVufDB8fHx8MTc2OTMwMjAxMnww&ixlib=rb-4.1.0&q=85",
+					"width": 7375,
+					"height": 4919
+				},
+				"width": 7375,
+				"height": 4919,
+				"edit": {
+					"background": "transparent",
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					}
+				},
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]
