@@ -14,8 +14,8 @@ export default async function Header() {
   ];
 
   return (
-    <header className="w-full bg-white">
-      <div className="container mx-auto px-6">
+    <header className="w-full bg-white px-40 sticky top-0 z-10">
+      <div className="container mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -47,7 +47,7 @@ export default async function Header() {
             ))}
             <Button
               asChild
-              className="bg-primary hover:bg-primary/90 text-black rounded-full px-6 py-2.5 font-medium hidden md:inline-flex"
+              className="bg-primary hover:bg-primary/90 text-black rounded-full px-6 py-2.5 font-bold hidden md:inline-flex"
             >
               <Link href="/invito">Snuggl an invite</Link>
             </Button>

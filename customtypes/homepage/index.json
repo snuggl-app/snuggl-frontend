@@ -11,6 +11,18 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "team": {
+              "type": "SharedSlice"
+            },
+            "newsletter": {
+              "type": "SharedSlice"
+            },
+            "solution_steps": {
+              "type": "SharedSlice"
+            },
+            "issue_highlight": {
+              "type": "SharedSlice"
+            },
             "hero": {
               "type": "SharedSlice"
             }

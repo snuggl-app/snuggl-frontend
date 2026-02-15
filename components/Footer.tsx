@@ -15,7 +15,7 @@ export default async function Footer() {
               {menu?.data?.site_title || "Snuggl"}
             </h3>
             <p className="text-sm text-muted-foreground">
-              {menu?.data?.meta_description || "Adopt, not shop."}
+              {menu?.data?.meta_description || "Adopt, don't shop."}
             </p>
           </div>
 
@@ -24,22 +24,34 @@ export default async function Footer() {
             <h4 className="font-heading font-medium mb-4">Esplora</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="/"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/adozioni" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="/adozioni"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Adozioni
                 </Link>
               </li>
               <li>
-                <Link href="/chi-siamo" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="/chi-siamo"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Chi siamo
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="/blog"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Blog
                 </Link>
               </li>
@@ -51,17 +63,26 @@ export default async function Footer() {
             <h4 className="font-heading font-medium mb-4">Supporto</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/contatti" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="/contatti"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Contatti
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="/faq"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   FAQ
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link
+                  href="/privacy"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Privacy Policy
                 </Link>
               </li>
@@ -73,17 +94,26 @@ export default async function Footer() {
             <h4 className="font-heading font-medium mb-4">Seguici</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Instagram
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Facebook
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
                   Twitter
                 </a>
               </li>
@@ -94,7 +124,8 @@ export default async function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-fog text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} {menu?.data?.site_title || "Snuggl"}. Tutti i diritti riservati.
+            © {new Date().getFullYear()} {menu?.data?.site_title || "Snuggl"}.
+            Tutti i diritti riservati.
           </p>
         </div>
       </div>

@@ -16,7 +16,7 @@ export const urbanist = Urbanist({
 
 export const metadata: Metadata = {
   title: "Snuggl",
-  description: "Adopt, not shop.",
+  description: "Adopt, don't shop.",
 };
 
 export default function RootLayout({

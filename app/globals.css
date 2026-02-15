@@ -14,6 +14,7 @@
   --fog: #e8e8e8;
   --silver: #b4b4b4;
   --black: #2d2d2d;
+  --green: #588D89;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -57,6 +58,7 @@
   --color-fog: var(--fog);
   --color-silver: var(--silver);
   --color-black: var(--black);
+  --color-green: var(--green);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-heading: var(--font-fredoka);
