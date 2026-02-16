@@ -1,0 +1,192 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "FieldContent",
+        "value": "Il nostro team",
+        "type": "Text"
+      },
+      "items": [
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "avatar",
+              {
+                "__TYPE__": "ImageContent",
+                "origin": {
+                  "id": "main",
+                  "url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+                  "width": 400,
+                  "height": 400
+                },
+                "url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
+                "width": 400,
+                "height": 400,
+                "edit": {
+                  "zoom": 1,
+                  "crop": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "background": "transparent"
+                }
+              }
+            ],
+            [
+              "name",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "Maria Rossi",
+                "type": "Text"
+              }
+            ],
+            [
+              "role",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "Fondatrice",
+                "type": "Text"
+              }
+            ]
+          ]
+        },
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "avatar",
+              {
+                "__TYPE__": "ImageContent",
+                "origin": {
+                  "id": "main",
+                  "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+                  "width": 400,
+                  "height": 400
+                },
+                "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+                "width": 400,
+                "height": 400,
+                "edit": {
+                  "zoom": 1,
+                  "crop": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "background": "transparent"
+                }
+              }
+            ],
+            [
+              "name",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "Luca Bianchi",
+                "type": "Text"
+              }
+            ],
+            [
+              "role",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "Veterinario",
+                "type": "Text"
+              }
+            ]
+          ]
+        },
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "avatar",
+              {
+                "__TYPE__": "ImageContent",
+                "origin": {
+                  "id": "main",
+                  "url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
+                  "width": 400,
+                  "height": 400
+                },
+                "url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
+                "width": 400,
+                "height": 400,
+                "edit": {
+                  "zoom": 1,
+                  "crop": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "background": "transparent"
+                }
+              }
+            ],
+            [
+              "name",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "Sofia Verdi",
+                "type": "Text"
+              }
+            ],
+            [
+              "role",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "Coordinatrice adozioni",
+                "type": "Text"
+              }
+            ]
+          ]
+        },
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "avatar",
+              {
+                "__TYPE__": "ImageContent",
+                "origin": {
+                  "id": "main",
+                  "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+                  "width": 400,
+                  "height": 400
+                },
+                "url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+                "width": 400,
+                "height": 400,
+                "edit": {
+                  "zoom": 1,
+                  "crop": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "background": "transparent"
+                }
+              }
+            ],
+            [
+              "name",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "Marco Neri",
+                "type": "Text"
+              }
+            ],
+            [
+              "role",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "Volontario",
+                "type": "Text"
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "items": []
+  }
+]

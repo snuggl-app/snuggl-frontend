@@ -1,0 +1,43 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "FieldContent",
+        "value": "Resta aggiornato sulle adozioni",
+        "type": "Text"
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Iscriviti alla nostra newsletter per ricevere aggiornamenti sugli animali disponibili per l'adozione e storie di successo.",
+              "spans": []
+            }
+          }
+        ]
+      },
+      "email_placeholder": {
+        "__TYPE__": "FieldContent",
+        "value": "Il tuo indirizzo email",
+        "type": "Text"
+      },
+      "button_text": {
+        "__TYPE__": "FieldContent",
+        "value": "Iscriviti",
+        "type": "Text"
+      },
+      "button_link": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "link_type": "Web",
+          "url": "#"
+        }
+      }
+    },
+    "items": []
+  }
+]

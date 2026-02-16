@@ -10,11 +10,11 @@ export default async function Header() {
   const navigationLinks = [
     { href: "/", label: "Home" },
     { href: "/blog", label: "Blog" },
-    { href: "/chi-siamo", label: "Chi Siamo" },
+    { href: "#team", label: "Chi Siamo" },
   ];
 
   return (
-    <header className="w-full bg-white px-40 sticky top-0 z-10">
+    <header className="w-full bg-white border-b border-gray-100 px-40 sticky top-0 z-10 shadow-sm">
       <div className="container mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}

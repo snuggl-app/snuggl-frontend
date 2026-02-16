@@ -6,8 +6,8 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await fetch(`https://api.vercel.app/blog/${params.uid}`).then((r) =>
-    r.json()
+  const post = await fetch(`https://api.vercel.app/blog/${params.uid}`).then(
+    (r) => r.json()
   );
 
   return {

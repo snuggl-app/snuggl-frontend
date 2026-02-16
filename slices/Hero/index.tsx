@@ -18,10 +18,10 @@ export default function Hero({ slice }: HeroProps) {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative w-full bg-gray py-16 md:py-24 px-40"
+      className=" bg-gray px-40 py-24"
     >
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-semibold leading-tight">
               {slice.primary.title_1 && (
@@ -51,7 +51,7 @@ export default function Hero({ slice }: HeroProps) {
                   variant={index === 0 ? "default" : "ghost"}
                   className={cn(
                     "font-bold bg-primary hover:bg-primary/90 text-black rounded-full",
-                    index && "bg-white border border-black/20",
+                    index && "bg-white border border-black/20"
                   )}
                 >
                   <PrismicLink field={item.button_link}>

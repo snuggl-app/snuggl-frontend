@@ -1,0 +1,46 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "label": {
+        "__TYPE__": "FieldContent",
+        "value": "Il problema",
+        "type": "Text"
+      },
+      "title": {
+        "__TYPE__": "FieldContent",
+        "value": "Migliaia di animali abbandonati ogni anno",
+        "type": "Text"
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "In Italia vengono abbandonati ogni anno migliaia di cani e gatti. Molti finiscono nei canili sovraffollati, dove trascorrono anni in attesa di una famiglia. L'adozione responsabile è la soluzione.",
+              "spans": []
+            }
+          }
+        ]
+      },
+      "stat_number": {
+        "__TYPE__": "FieldContent",
+        "value": "130.000+",
+        "type": "Text"
+      },
+      "stat_label": {
+        "__TYPE__": "FieldContent",
+        "value": "Animali abbandonati",
+        "type": "Text"
+      },
+      "stat_sublabel": {
+        "__TYPE__": "FieldContent",
+        "value": "ogni anno in Italia",
+        "type": "Text"
+      }
+    },
+    "items": []
+  }
+]

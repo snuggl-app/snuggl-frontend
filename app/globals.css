@@ -1,7 +1,15 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset per header sticky */
+section[id] {
+  scroll-margin-top: 5rem; /* h-20 = 5rem */
+}
 
 :root {
   --primary: #56d0c5;
@@ -14,7 +22,7 @@
   --fog: #e8e8e8;
   --silver: #b4b4b4;
   --black: #2d2d2d;
-  --green: #588D89;
+  --green: #588d89;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -105,7 +113,11 @@
     font-weight: 600;
   }
 
-  h2, h3, h4, h5, h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-fredoka);
     font-weight: 500;
   }
@@ -156,7 +168,7 @@
   .shadow {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
-  
+
   .shadow-primary {
     box-shadow: 0 25px 50px -12px rgba(86, 208, 197, 0.3);
   }

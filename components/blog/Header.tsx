@@ -28,7 +28,10 @@ export default async function Header() {
               </span>
             </Link>
             <span className="text-silver">/</span>
-            <Link href="/blog" className="text-lg font-heading font-medium text-primary">
+            <Link
+              href="/blog"
+              className="text-lg font-heading font-medium text-primary"
+            >
               Blog
             </Link>
           </div>

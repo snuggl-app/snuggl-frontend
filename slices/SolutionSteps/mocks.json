@@ -1,0 +1,198 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "FieldContent",
+        "value": "Come funziona l'adozione",
+        "type": "Text"
+      },
+      "subtitle": {
+        "__TYPE__": "FieldContent",
+        "value": "Tre semplici passi per dare una casa a un amico a quattro zampe",
+        "type": "Text"
+      },
+      "items": [
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "step_number",
+              {
+                "__TYPE__": "FieldContent",
+                "value": 1,
+                "type": "Number"
+              }
+            ],
+            [
+              "image",
+              {
+                "__TYPE__": "ImageContent",
+                "origin": {
+                  "id": "main",
+                  "url": "https://images.unsplash.com/photo-1450778869180-41d0601e046e",
+                  "width": 800,
+                  "height": 800
+                },
+                "url": "https://images.unsplash.com/photo-1450778869180-41d0601e046e",
+                "width": 800,
+                "height": 800,
+                "edit": {
+                  "zoom": 1,
+                  "crop": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "background": "transparent"
+                }
+              }
+            ],
+            [
+              "step_title",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "Scegli il tuo amico",
+                "type": "Text"
+              }
+            ],
+            [
+              "step_description",
+              {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "paragraph",
+                    "content": {
+                      "text": "Sfoglia i profili degli animali disponibili e trova quello più adatto a te.",
+                      "spans": []
+                    }
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "step_number",
+              {
+                "__TYPE__": "FieldContent",
+                "value": 2,
+                "type": "Number"
+              }
+            ],
+            [
+              "image",
+              {
+                "__TYPE__": "ImageContent",
+                "origin": {
+                  "id": "main",
+                  "url": "https://images.unsplash.com/photo-1587300003388-59208cc962cb",
+                  "width": 800,
+                  "height": 800
+                },
+                "url": "https://images.unsplash.com/photo-1587300003388-59208cc962cb",
+                "width": 800,
+                "height": 800,
+                "edit": {
+                  "zoom": 1,
+                  "crop": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "background": "transparent"
+                }
+              }
+            ],
+            [
+              "step_title",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "Compila la richiesta",
+                "type": "Text"
+              }
+            ],
+            [
+              "step_description",
+              {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "paragraph",
+                    "content": {
+                      "text": "Invia la tua richiesta di adozione compilando un semplice modulo online.",
+                      "spans": []
+                    }
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        {
+          "__TYPE__": "GroupItemContent",
+          "value": [
+            [
+              "step_number",
+              {
+                "__TYPE__": "FieldContent",
+                "value": 3,
+                "type": "Number"
+              }
+            ],
+            [
+              "image",
+              {
+                "__TYPE__": "ImageContent",
+                "origin": {
+                  "id": "main",
+                  "url": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b",
+                  "width": 800,
+                  "height": 800
+                },
+                "url": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b",
+                "width": 800,
+                "height": 800,
+                "edit": {
+                  "zoom": 1,
+                  "crop": {
+                    "x": 0,
+                    "y": 0
+                  },
+                  "background": "transparent"
+                }
+              }
+            ],
+            [
+              "step_title",
+              {
+                "__TYPE__": "FieldContent",
+                "value": "Porta a casa il tuo amico",
+                "type": "Text"
+              }
+            ],
+            [
+              "step_description",
+              {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "paragraph",
+                    "content": {
+                      "text": "Dopo la verifica, potrai portare a casa il tuo nuovo compagno di vita!",
+                      "spans": []
+                    }
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    "items": []
+  }
+]
