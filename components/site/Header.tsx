@@ -10,7 +10,7 @@ export default async function Header() {
   const navigationLinks = [
     { href: "/", label: "Home" },
     { href: "/blog", label: "Blog" },
-    { href: "#team", label: "Chi Siamo" },
+    { href: "#team", label: "Team" },
   ];
 
   return (
