@@ -10,7 +10,7 @@ const Team: FC<TeamProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full bg-white py-24 px-40"
+      className="w-full bg-white py-12 px-6 lg:py-24 lg:px-40"
       id="team"
     >
       <div className="container mx-auto">
@@ -20,22 +20,24 @@ const Team: FC<TeamProps> = ({ slice }) => {
         </h2>
 
         {/* Grid membri team */}
-        <div className="flex justify-center gap-12 flex-wrap">
+        <div className="grid grid-cols-2 gap-8 lg:flex lg:justify-center lg:flex-wrap lg:gap-12">
           {slice.primary.items.map((member, index) => (
             <div key={index} className="flex flex-col items-center gap-4">
-              <Avatar className="w-32 h-32 border border-primary">
+              <Avatar className="w-20 h-20 md:w-32 md:h-32 border border-primary">
                 <AvatarImage
                   src={member.avatar.url || ""}
                   alt={member.name || ""}
                   className="object-cover object-top"
                 />
-                <AvatarFallback className="text-2xl">
+                <AvatarFallback className="text-xl md: text-2xl">
                   {member.name?.charAt(0)?.toUpperCase()}
                 </AvatarFallback>
               </Avatar>
 
-              <div className="text-center">
-                <h3 className="text-xl font-bold">{member.name}</h3>
+              <div className="text-center flex flex-col items-center">
+                <h3 className="text-xl font-bold h-14 flex items-center justify-center">
+                  {member.name}
+                </h3>
                 <p className="text-primary uppercase text-sm font-extrabold">
                   {member.role}
                 </p>

@@ -55,7 +55,7 @@ const Newsletter: FC<NewsletterProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-azure py-24 px-40"
+      className="bg-azure py-12 px-6 lg:py-24 lg:px-40"
       id="newsletter"
     >
       <div className="container mx-auto max-w-6xl">
@@ -70,7 +70,10 @@ const Newsletter: FC<NewsletterProps> = ({ slice }) => {
             {asText(slice.primary.description)}
           </p>
 
-          <form onSubmit={handleSubmit} className="flex gap-4 w-full max-w-2xl">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row gap-4 w-full max-w-2xl"
+          >
             <Input
               type="email"
               value={email}
@@ -83,7 +86,7 @@ const Newsletter: FC<NewsletterProps> = ({ slice }) => {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6 text-base font-bold whitespace-nowrap shadow-xl"
+              className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6 text-base font-bold whitespace-nowrap shadow-xl w-full sm:w-auto"
             >
               {isSubmitting ? "Invio..." : slice.primary.button_text}
             </Button>

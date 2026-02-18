@@ -1,9 +1,9 @@
 import { Content } from "@prismicio/client";
 import { PrismicLink, SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
 /**
  * Props for `Hero`.
  */
@@ -18,7 +18,7 @@ export default function Hero({ slice }: HeroProps) {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className=" bg-gray px-40 py-24"
+      className="bg-gray px-6 py-12 lg:px-40 lg:py-24"
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
@@ -62,7 +62,7 @@ export default function Hero({ slice }: HeroProps) {
             </div>
           </div>
 
-          <div className="relative w-full max-w-[500px] aspect-square rotate-2">
+          <div className="relative w-full max-w-[500px] aspect-square rotate-2 mx-auto hidden sm:block">
             <PrismicNextImage
               alt=""
               field={slice.primary.hero_image}

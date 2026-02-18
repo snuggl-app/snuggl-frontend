@@ -1,10 +1,9 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicRichText } from "@prismicio/react";
 
 export type SolutionStepsProps =
   SliceComponentProps<Content.SolutionStepsSlice>;
@@ -14,7 +13,7 @@ const SolutionSteps: FC<SolutionStepsProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-gray px-40 py-24"
+      className="bg-gray px-6 py-12 lg:px-40 lg:py-24"
       id="#solution"
     >
       <div className="container max-w-6xl mx-auto">
@@ -25,9 +24,12 @@ const SolutionSteps: FC<SolutionStepsProps> = ({ slice }) => {
         </div>
 
         {/* Grid Container */}
-        <div className="grid grid-cols-3 gap-8">
+        <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-pl-6 -mx-6 px-6 sm:mx-6 sm:px-0">
           {slice.primary.items.map((item, index) => (
-            <div key={index} className="flex flex-col gap-6">
+            <div
+              key={index}
+              className="flex flex-col gap-6 min-w-[80vw] sm:min-w-0 snap-start"
+            >
               {/* Card con immagine */}
               <Card className="relative overflow-hidden aspect-[4/3] border-0 shadow-card">
                 <PrismicNextImage
