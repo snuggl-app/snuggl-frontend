@@ -1,8 +1,9 @@
 import { Content } from "@prismicio/client";
-import { PrismicLink, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 /**
  * Props for `Hero`.
@@ -43,22 +44,29 @@ export default function Hero({ slice }: HeroProps) {
             )}
 
             <div className="flex flex-col sm:flex-row gap-4">
-              {buttons?.map((item, index) => (
-                <Button
-                  key={index}
-                  asChild
-                  size="lg"
-                  variant={index === 0 ? "default" : "ghost"}
-                  className={cn(
-                    "font-bold bg-primary hover:bg-primary/90 text-black rounded-full",
-                    index && "bg-white border border-black/20"
-                  )}
-                >
-                  <PrismicLink field={item.button_link}>
-                    {item.button_text}
-                  </PrismicLink>
-                </Button>
-              ))}
+              {buttons?.map((item, index) => {
+                const href = item.button_href || "#";
+                const isAnchor = href.startsWith("#");
+
+                return (
+                  <Button
+                    key={index}
+                    asChild
+                    size="lg"
+                    variant={index === 0 ? "default" : "ghost"}
+                    className={cn(
+                      "font-bold bg-primary hover:bg-primary/90 text-black rounded-full",
+                      index && "bg-white border border-black/20"
+                    )}
+                  >
+                    {isAnchor ? (
+                      <a href={href}>{item.button_text}</a>
+                    ) : (
+                      <Link href={href}>{item.button_text}</Link>
+                    )}
+                  </Button>
+                );
+              })}
             </div>
           </div>
 

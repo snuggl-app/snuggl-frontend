@@ -21,7 +21,7 @@ const Team: FC<TeamProps> = ({ slice }) => {
 
         {/* Grid membri team */}
         <div className="grid grid-cols-2 gap-8 lg:flex lg:justify-center lg:flex-wrap lg:gap-12">
-          {slice.primary.items.map((member, index) => (
+          {slice.items.map((member, index) => (
             <div key={index} className="flex flex-col items-center gap-4">
               <Avatar className="w-20 h-20 md:w-32 md:h-32 border border-primary">
                 <AvatarImage

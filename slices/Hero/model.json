@@ -54,16 +54,11 @@
                   "placeholder": ""
                 }
               },
-              "button_link": {
-                "type": "Link",
+              "button_href": {
+                "type": "Text",
                 "config": {
-                  "label": "Button Link",
-                  "placeholder": "",
-                  "select": null,
-                  "allowTargetBlank": true,
-                  "allowText": true,
-                  "repeat": false,
-                  "variants": ["Primary", "Secondary"]
+                  "label": "Button href",
+                  "placeholder": ""
                 }
               }
             }

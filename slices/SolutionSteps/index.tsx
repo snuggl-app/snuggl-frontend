@@ -14,7 +14,7 @@ const SolutionSteps: FC<SolutionStepsProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="bg-gray px-6 py-12 lg:px-40 lg:py-24"
-      id="#solution"
+      id="solution"
     >
       <div className="container max-w-6xl mx-auto">
         {/* Header */}
@@ -25,7 +25,7 @@ const SolutionSteps: FC<SolutionStepsProps> = ({ slice }) => {
 
         {/* Grid Container */}
         <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-pl-6 -mx-6 px-6 sm:mx-6 sm:px-0">
-          {slice.primary.items.map((item, index) => (
+          {slice.items.map((item, index) => (
             <div
               key={index}
               className="flex flex-col gap-6 min-w-[80vw] sm:min-w-0 snap-start"

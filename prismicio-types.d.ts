@@ -28,7 +28,8 @@ type PickContentRelationshipFieldData<
       TSubRelationship["customtypes"],
       TLang
     >;
-  } & { // Group
+  } & // Group
+  {
     [TGroup in Extract<
       TRelationship["fields"][number],
       | prismic.CustomTypeModelFetchGroupLevel1
@@ -40,7 +41,8 @@ type PickContentRelationshipFieldData<
           PickContentRelationshipFieldData<TGroup, TGroupData, TLang>
         >
       : never;
-  } & { // Other fields
+  } & // Other fields
+  {
     [TFieldKey in Extract<
       TRelationship["fields"][number],
       string
@@ -267,20 +269,14 @@ export interface HeroSliceDefaultPrimaryButtonItem {
   button_text: prismic.KeyTextField;
 
   /**
-   * Button Link field in *Hero → Default → Primary → Button*
+   * Button href field in *Hero → Default → Primary → Button*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.button[].button_link
-   * - **Documentation**: https://prismic.io/docs/fields/link
+   * - **API ID Path**: hero.default.primary.button[].button_href
+   * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  button_link: prismic.LinkField<
-    string,
-    string,
-    unknown,
-    prismic.FieldState,
-    "Primary" | "Secondary"
-  >;
+  button_href: prismic.KeyTextField;
 }
 
 /**
@@ -552,51 +548,6 @@ export type NewsletterSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *SolutionSteps → Default → Primary → Items*
- */
-export interface SolutionStepsSliceDefaultPrimaryItemsItem {
-  /**
-   * Step Number field in *SolutionSteps → Default → Primary → Items*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: solution_steps.default.primary.items[].step_number
-   * - **Documentation**: https://prismic.io/docs/fields/number
-   */
-  step_number: prismic.NumberField;
-
-  /**
-   * Image field in *SolutionSteps → Default → Primary → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: solution_steps.default.primary.items[].image
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Step Title field in *SolutionSteps → Default → Primary → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: solution_steps.default.primary.items[].step_title
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  step_title: prismic.KeyTextField;
-
-  /**
-   * Step Description field in *SolutionSteps → Default → Primary → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: solution_steps.default.primary.items[].step_description
-   * - **Documentation**: https://prismic.io/docs/fields/rich-text
-   */
-  step_description: prismic.RichTextField;
-}
-
-/**
  * Primary content in *SolutionSteps → Default → Primary*
  */
 export interface SolutionStepsSliceDefaultPrimary {
@@ -619,18 +570,51 @@ export interface SolutionStepsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   subtitle: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *SolutionSteps → Items*
+ */
+export interface SolutionStepsSliceDefaultItem {
+  /**
+   * Step Number field in *SolutionSteps → Items*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: solution_steps.items[].step_number
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  step_number: prismic.NumberField;
 
   /**
-   * Items field in *SolutionSteps → Default → Primary*
+   * Image field in *SolutionSteps → Items*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: solution_steps.default.primary.items[]
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   * - **API ID Path**: solution_steps.items[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
    */
-  items: prismic.GroupField<
-    Simplify<SolutionStepsSliceDefaultPrimaryItemsItem>
-  >;
+  image: prismic.ImageField<never>;
+
+  /**
+   * Step Title field in *SolutionSteps → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: solution_steps.items[].step_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  step_title: prismic.KeyTextField;
+
+  /**
+   * Step Description field in *SolutionSteps → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: solution_steps.items[].step_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  step_description: prismic.RichTextField;
 }
 
 /**
@@ -643,7 +627,7 @@ export interface SolutionStepsSliceDefaultPrimary {
 export type SolutionStepsSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<SolutionStepsSliceDefaultPrimary>,
-  never
+  Simplify<SolutionStepsSliceDefaultItem>
 >;
 
 /**
@@ -664,41 +648,6 @@ export type SolutionStepsSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *Team → Default → Primary → Items*
- */
-export interface TeamSliceDefaultPrimaryItemsItem {
-  /**
-   * Avatar field in *Team → Default → Primary → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: team.default.primary.items[].avatar
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  avatar: prismic.ImageField<never>;
-
-  /**
-   * Name field in *Team → Default → Primary → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: team.default.primary.items[].name
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  name: prismic.KeyTextField;
-
-  /**
-   * Role field in *Team → Default → Primary → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: team.default.primary.items[].role
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  role: prismic.KeyTextField;
-}
-
-/**
  * Primary content in *Team → Default → Primary*
  */
 export interface TeamSliceDefaultPrimary {
@@ -711,16 +660,41 @@ export interface TeamSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   title: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Team → Items*
+ */
+export interface TeamSliceDefaultItem {
+  /**
+   * Avatar field in *Team → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team.items[].avatar
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  avatar: prismic.ImageField<never>;
 
   /**
-   * Items field in *Team → Default → Primary*
+   * Name field in *Team → Items*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: team.default.primary.items[]
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   * - **API ID Path**: team.items[].name
+   * - **Documentation**: https://prismic.io/docs/fields/text
    */
-  items: prismic.GroupField<Simplify<TeamSliceDefaultPrimaryItemsItem>>;
+  name: prismic.KeyTextField;
+
+  /**
+   * Role field in *Team → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team.items[].role
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  role: prismic.KeyTextField;
 }
 
 /**
@@ -733,7 +707,7 @@ export interface TeamSliceDefaultPrimary {
 export type TeamSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<TeamSliceDefaultPrimary>,
-  never
+  Simplify<TeamSliceDefaultItem>
 >;
 
 /**
@@ -792,13 +766,13 @@ declare module "@prismicio/client" {
       NewsletterSliceVariation,
       NewsletterSliceDefault,
       SolutionStepsSlice,
-      SolutionStepsSliceDefaultPrimaryItemsItem,
       SolutionStepsSliceDefaultPrimary,
+      SolutionStepsSliceDefaultItem,
       SolutionStepsSliceVariation,
       SolutionStepsSliceDefault,
       TeamSlice,
-      TeamSliceDefaultPrimaryItemsItem,
       TeamSliceDefaultPrimary,
+      TeamSliceDefaultItem,
       TeamSliceVariation,
       TeamSliceDefault,
     };
