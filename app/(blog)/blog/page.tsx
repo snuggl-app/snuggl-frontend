@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function BlogPostPage() {
   return (
-    <main className="h-full flex items-center justify-center bg-gray px-6">
+    <main className="min-h-screen flex items-center justify-center bg-gray px-6">
       <div className="flex flex-col items-center text-center gap-6 max-w-md">
         <span className="text-6xl">🐾</span>
         <h1 className="text-4xl font-bold font-fredoka">

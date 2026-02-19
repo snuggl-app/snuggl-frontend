@@ -9,7 +9,7 @@ export default function BlogLayout({
   return (
     <>
       <BlogHeader />
-      <main className="h-full">{children}</main>
+      <main className="min-h-screen">{children}</main>
       <Footer />
     </>
   );

@@ -6,7 +6,7 @@ export default async function Footer() {
   const menu = await client.getSingle("menu_site").catch(() => null);
 
   return (
-    <footer className="bg-gray border-t border-fog mt-12 lg:mt-20">
+    <footer className="bg-gray border-t border-fog">
       <div className="container mx-auto px-6 py-10">
         {/* Brand - centrato su mobile, sinistra su desktop */}
         <div className="text-center md:text-left mb-8 md:hidden">
