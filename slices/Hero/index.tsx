@@ -55,8 +55,8 @@ export default function Hero({ slice }: HeroProps) {
                     size="lg"
                     variant={index === 0 ? "default" : "ghost"}
                     className={cn(
-                      "font-bold bg-primary hover:bg-primary/90 text-black rounded-full",
-                      index && "bg-white border border-black/20"
+                      "font-bold bg-primary text-white hover:bg-primary/90  rounded-full",
+                      index && "bg-white border text-black border-black/20"
                     )}
                   >
                     {isAnchor ? (

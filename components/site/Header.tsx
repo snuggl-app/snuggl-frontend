@@ -47,9 +47,9 @@ export default async function Header() {
             ))}
             <Button
               asChild
-              className="bg-primary hover:bg-primary/90 text-black rounded-full px-6 py-2.5 font-bold hidden md:inline-flex"
+              className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 py-2.5 font-bold hidden md:inline-flex"
             >
-              <Link href="/invito">Snuggl an invite</Link>
+              <Link href="#newsletter">Snuggl an invite</Link>
             </Button>
           </nav>
         </div>
