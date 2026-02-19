@@ -23,21 +23,21 @@ export default async function Header() {
                   className="w-8 h-8 object-contain"
                 />
               )}
-              <span className="text-xl font-heading font-semibold text-foreground">
+              <span className="hidden sm:block text-xl font-heading font-semibold text-foreground">
                 {menu?.data?.site_title || "Snuggl"}
               </span>
             </Link>
-            <span className="text-silver">/</span>
+            <span className="hidden sm:block text-silver">/</span>
             <Link
               href="/blog"
-              className="text-lg font-heading font-medium text-primary"
+              className="hidden sm:block text-lg font-heading font-medium text-primary"
             >
               Blog
             </Link>
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center gap-6">
+          <div className="hidden sm:flex items-center gap-6">
             <Link
               href="/blog"
               className="font-body text-sm hover:text-primary transition-colors"

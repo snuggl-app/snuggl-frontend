@@ -15,7 +15,7 @@ const Team: FC<TeamProps> = ({ slice }) => {
     >
       <div className="container mx-auto">
         {/* Titolo */}
-        <h2 className="text-5xl font-bold text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
           {slice.primary.title}
         </h2>
 

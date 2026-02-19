@@ -6,11 +6,22 @@ export default async function Footer() {
   const menu = await client.getSingle("menu_site").catch(() => null);
 
   return (
-    <footer className="bg-gray border-t border-fog mt-20">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="col-span-1">
+    <footer className="bg-gray border-t border-fog mt-12 lg:mt-20">
+      <div className="container mx-auto px-6 py-10">
+        {/* Brand - centrato su mobile, sinistra su desktop */}
+        <div className="text-center md:text-left mb-8 md:hidden">
+          <h3 className="text-xl font-heading font-semibold">
+            {menu?.data?.site_title || "Snuggl"}
+          </h3>
+          <p className="text-sm text-muted-foreground mt-1">
+            {menu?.data?.meta_description || "Adopt, don't shop."}
+          </p>
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {/* Brand - solo desktop */}
+          <div className="hidden md:block col-span-1">
             <h3 className="text-xl font-heading font-semibold mb-4">
               {menu?.data?.site_title || "Snuggl"}
             </h3>
@@ -19,7 +30,7 @@ export default async function Footer() {
             </p>
           </div>
 
-          {/* Links */}
+          {/* Esplora */}
           <div>
             <h4 className="font-heading font-medium mb-4">Esplora</h4>
             <ul className="space-y-2 text-sm">
@@ -33,64 +44,17 @@ export default async function Footer() {
               </li>
               <li>
                 <Link
-                  href="/adozioni"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Adozioni
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/chi-siamo"
+                  href="#team"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Chi siamo
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Blog
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h4 className="font-heading font-medium mb-4">Supporto</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/contatti"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Contatti
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/faq"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/privacy"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Privacy Policy
                 </Link>
               </li>
             </ul>
           </div>
 
           {/* Social */}
-          <div>
+          <div className="text-right">
             <h4 className="font-heading font-medium mb-4">Seguici</h4>
             <ul className="space-y-2 text-sm">
               <li>
@@ -99,22 +63,6 @@ export default async function Footer() {
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Instagram
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Twitter
                 </a>
               </li>
             </ul>
