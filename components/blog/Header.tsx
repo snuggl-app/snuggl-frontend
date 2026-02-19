@@ -1,6 +1,5 @@
 import { createClient } from "@/prismicio";
 import Link from "next/link";
-import Image from "next/image";
 
 export default async function Header() {
   const client = createClient();
@@ -14,15 +13,6 @@ export default async function Header() {
           {/* Logo + Blog Title */}
           <div className="flex items-center gap-4">
             <Link href="/" className="flex items-center gap-2">
-              {menu?.data?.logo?.url && (
-                <Image
-                  src={menu.data.logo.url}
-                  alt={menu.data.logo.alt || "Snuggl Logo"}
-                  width={32}
-                  height={32}
-                  className="w-8 h-8 object-contain"
-                />
-              )}
               <span className="hidden sm:block text-xl font-heading font-semibold text-foreground">
                 {menu?.data?.site_title || "Snuggl"}
               </span>
