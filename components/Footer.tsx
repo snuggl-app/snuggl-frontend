@@ -9,7 +9,7 @@ export default async function Footer() {
     <footer className="bg-gray border-t border-fog">
       <div className="container mx-auto px-6 py-10">
         {/* Brand - centrato su mobile, sinistra su desktop */}
-        <div className="text-center md:text-left mb-8 md:hidden">
+        <div className="text-center mb-8">
           <h3 className="text-xl font-heading font-semibold">
             {menu?.data?.site_title || "Snuggl"}
           </h3>
@@ -19,19 +19,9 @@ export default async function Footer() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {/* Brand - solo desktop */}
-          <div className="hidden md:block col-span-1">
-            <h3 className="text-xl font-heading font-semibold mb-4">
-              {menu?.data?.site_title || "Snuggl"}
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              {menu?.data?.meta_description || "Adopt, don't shop."}
-            </p>
-          </div>
-
+        <div className="grid grid-cols-2 gap-8 md:px40 lg:px-80 md:text-center">
           {/* Esplora */}
-          <div>
+          <div className="">
             <h4 className="font-heading font-medium mb-4">Esplora</h4>
             <ul className="space-y-2 text-sm">
               <li>
@@ -54,12 +44,12 @@ export default async function Footer() {
           </div>
 
           {/* Social */}
-          <div className="text-right">
+          <div className="text-right md:text-center">
             <h4 className="font-heading font-medium mb-4">Seguici</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/snuggl.app"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Instagram
@@ -72,8 +62,8 @@ export default async function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-fog text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} {menu?.data?.site_title || "Snuggl"}.
-            Tutti i diritti riservati.
+            © {new Date().getFullYear()}{" "}
+            {menu?.data?.site_title || "Snuggl.app"}. Tutti i diritti riservati.
           </p>
         </div>
       </div>
