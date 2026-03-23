@@ -1,20 +1,23 @@
+// components/site/Header.tsx
 import { createClient } from "@/prismicio";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import MobileMenu from "@/components/ui/MobileMenu";
+
+const navigationLinks = [
+  { href: "/", label: "Home" },
+  { href: "/blog", label: "Blog" },
+  { href: "#team", label: "Team" },
+  { href: "#newsletter", label: "Snuggl an invite" },
+];
 
 export default async function Header() {
   const client = createClient();
   const menu = await client.getSingle("menu_site").catch(() => null);
 
-  const navigationLinks = [
-    { href: "/", label: "Home" },
-    { href: "/blog", label: "Blog" },
-    { href: "#team", label: "Team" },
-  ];
-
   return (
-    <header className="w-full bg-white border-b border-gray-100 px-40 sticky top-0 z-10 shadow-sm">
+    <header className="w-full bg-white border-b border-gray-100 px-6 lg:px-40 sticky top-0 z-10 shadow-sm">
       <div className="container mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -47,11 +50,14 @@ export default async function Header() {
             ))}
             <Button
               asChild
-              className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 py-2.5 font-bold hidden md:inline-flex"
+              className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 py-2.5 font-bold"
             >
               <Link href="#newsletter">Snuggl an invite</Link>
             </Button>
           </nav>
+
+          {/* Mobile */}
+          <MobileMenu links={navigationLinks} />
         </div>
       </div>
     </header>
