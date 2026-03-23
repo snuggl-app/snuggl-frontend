@@ -9,7 +9,6 @@ const navigationLinks = [
   { href: "/", label: "Home" },
   { href: "/blog", label: "Blog" },
   { href: "#team", label: "Team" },
-  { href: "#newsletter", label: "Snuggl an invite" },
 ];
 
 export default async function Header() {
