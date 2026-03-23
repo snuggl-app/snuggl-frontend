@@ -1,0 +1,53 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"section_title": {
+				"__TYPE__": "FieldContent",
+				"value": "your",
+				"type": "Text"
+			},
+			"category_filter": {
+				"__TYPE__": "FieldContent",
+				"value": "Alimentazione",
+				"type": "Select"
+			},
+			"max_articles": {
+				"__TYPE__": "FieldContent",
+				"value": "50",
+				"type": "Number"
+			},
+			"show_filters": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"show_load_more": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"pinned_articles": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"pinned_article",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "7f38ab41-54d5-4f9f-85eb-28e493241ed5",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

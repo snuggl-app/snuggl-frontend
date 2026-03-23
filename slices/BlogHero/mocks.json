@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "library",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi dolor nulla excepteur qui laboris culpa voluptate in fugiat Lorem duis incididunt."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

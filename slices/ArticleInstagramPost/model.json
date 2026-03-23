@@ -1,0 +1,37 @@
+{
+  "id": "article_instagram_post",
+  "type": "SharedSlice",
+  "name": "ArticleInstagramPost",
+  "description": "ArticleInstagramPost",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "instagram_url": {
+          "type": "Link",
+          "config": {
+            "label": "Instagram Url",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        },
+        "instagram_text": {
+          "type": "Text",
+          "config": {
+            "label": "Instagram Text",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

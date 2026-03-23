@@ -1,0 +1,23 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"instagram_url": {
+				"key": "8ece5ab3-80bc-4c95-afeb-8ddffe63fe93",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "movement"
+				}
+			},
+			"instagram_text": {
+				"__TYPE__": "FieldContent",
+				"value": "frighten",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

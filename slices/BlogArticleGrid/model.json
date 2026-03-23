@@ -1,0 +1,92 @@
+{
+  "id": "blog_article_grid",
+  "type": "SharedSlice",
+  "name": "BlogArticleGrid",
+  "description": "BlogArticleGrid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "section_title": {
+          "type": "Text",
+          "config": {
+            "label": "Section Title",
+            "placeholder": ""
+          }
+        },
+        "category_filter": {
+          "type": "Select",
+          "config": {
+            "label": "Category Filter",
+            "placeholder": "",
+            "options": [
+              "Adozioni",
+              "Consigli",
+              "Storie",
+              "Alimentazione",
+              "Attività"
+            ]
+          }
+        },
+        "max_articles": {
+          "type": "Number",
+          "config": {
+            "label": "Max Articles",
+            "placeholder": ""
+          }
+        },
+        "show_filters": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show Filters",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          }
+        },
+        "show_load_more": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show Load More",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": true
+          }
+        },
+        "pinned_articles": {
+          "type": "Group",
+          "config": {
+            "label": "Pinned Articles",
+            "repeat": true,
+            "fields": {
+              "pinned_article": {
+                "type": "Link",
+                "config": {
+                  "label": "Pinned Article",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    {
+                      "id": "article",
+                      "fields": [
+                        "meta_title",
+                        "meta_description",
+                        "meta_image"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
