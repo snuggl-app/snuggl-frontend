@@ -69,6 +69,161 @@ type ContentRelationshipFieldWithData<
   >;
 }[Exclude<TCustomType[number], string>["id"]];
 
+type ArticleDocumentDataSlicesSlice =
+  | ArticleContentSlice
+  | ArticleHeaderSlice
+  | ArticleInstagramPostSlice;
+
+/**
+ * Content for Article documents
+ */
+interface ArticleDocumentData {
+  /**
+   * Slice Zone field in *Article*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<ArticleDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: article.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: article.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Article*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Article document from Prismic
+ *
+ * - **API ID**: `article`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticleDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ArticleDocumentData>,
+    "article",
+    Lang
+  >;
+
+type BlogHomepageDocumentDataSlicesSlice =
+  | NewsletterSlice
+  | BlogArticleGridSlice
+  | BlogInstagramCtaSlice
+  | BlogHeroSlice;
+
+/**
+ * Content for Blog Homepage documents
+ */
+interface BlogHomepageDocumentData {
+  /**
+   * Featured Article field in *Blog Homepage*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_homepage.featured_article
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  featured_article: ContentRelationshipFieldWithData<
+    [
+      {
+        id: "article";
+        fields: ["meta_title", "meta_description", "meta_image"];
+      },
+    ]
+  >;
+
+  /**
+   * Slice Zone field in *Blog Homepage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_homepage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<BlogHomepageDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Blog Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: blog_homepage.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Blog Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: blog_homepage.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Blog Homepage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_homepage.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Blog Homepage document from Prismic
+ *
+ * - **API ID**: `blog_homepage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogHomepageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<BlogHomepageDocumentData>,
+    "blog_homepage",
+    Lang
+  >;
+
 type HomepageDocumentDataSlicesSlice =
   | TeamSlice
   | NewsletterSlice
@@ -252,7 +407,557 @@ export type MenuSiteDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = HomepageDocument | MenuSiteDocument;
+export type AllDocumentTypes =
+  | ArticleDocument
+  | BlogHomepageDocument
+  | HomepageDocument
+  | MenuSiteDocument;
+
+/**
+ * Item in *ArticleContent → Default → Primary → Notes*
+ */
+export interface ArticleContentSliceDefaultPrimaryNotesItem {
+  /**
+   * Marker field in *ArticleContent → Default → Primary → Notes*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_content.default.primary.notes[].marker
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  marker: prismic.KeyTextField;
+
+  /**
+   * Note field in *ArticleContent → Default → Primary → Notes*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_content.default.primary.notes[].note
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  note: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *ArticleContent → Default → Primary*
+ */
+export interface ArticleContentSliceDefaultPrimary {
+  /**
+   * Content field in *ArticleContent → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_content.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Notes field in *ArticleContent → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_content.default.primary.notes[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  notes: prismic.GroupField<
+    Simplify<ArticleContentSliceDefaultPrimaryNotesItem>
+  >;
+}
+
+/**
+ * Default variation for ArticleContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ArticleContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ArticleContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ArticleContent*
+ */
+type ArticleContentSliceVariation = ArticleContentSliceDefault;
+
+/**
+ * ArticleContent Shared Slice
+ *
+ * - **API ID**: `article_content`
+ * - **Description**: ArticleContent
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ArticleContentSlice = prismic.SharedSlice<
+  "article_content",
+  ArticleContentSliceVariation
+>;
+
+/**
+ * Primary content in *ArticleHeader → Default → Primary*
+ */
+export interface ArticleHeaderSliceDefaultPrimary {
+  /**
+   * Title field in *ArticleHeader → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_header.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *ArticleHeader → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_header.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Hero Image field in *ArticleHeader → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_header.default.primary.hero_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  hero_image: prismic.ImageField<never>;
+
+  /**
+   * Author Name field in *ArticleHeader → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_header.default.primary.author_name
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  author_name: prismic.KeyTextField;
+
+  /**
+   * Author Avatar field in *ArticleHeader → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_header.default.primary.author_avatar
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  author_avatar: prismic.ImageField<never>;
+
+  /**
+   * Published at field in *ArticleHeader → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_header.default.primary.published_at
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  published_at: prismic.KeyTextField;
+
+  /**
+   * Read Time field in *ArticleHeader → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_header.default.primary.read_time
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  read_time: prismic.NumberField;
+
+  /**
+   * Category field in *ArticleHeader → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_header.default.primary.category
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  category: prismic.SelectField<
+    "Adozioni" | "Consigli" | "Storie" | "Alimentazione" | "Attività"
+  >;
+}
+
+/**
+ * Default variation for ArticleHeader Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ArticleHeaderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ArticleHeaderSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ArticleHeader*
+ */
+type ArticleHeaderSliceVariation = ArticleHeaderSliceDefault;
+
+/**
+ * ArticleHeader Shared Slice
+ *
+ * - **API ID**: `article_header`
+ * - **Description**: ArticleHeader
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ArticleHeaderSlice = prismic.SharedSlice<
+  "article_header",
+  ArticleHeaderSliceVariation
+>;
+
+/**
+ * Primary content in *ArticleInstagramPost → Default → Primary*
+ */
+export interface ArticleInstagramPostSliceDefaultPrimary {
+  /**
+   * Instagram Url field in *ArticleInstagramPost → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_instagram_post.default.primary.instagram_url
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  instagram_url: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Instagram Text field in *ArticleInstagramPost → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_instagram_post.default.primary.instagram_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  instagram_text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ArticleInstagramPost Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ArticleInstagramPostSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ArticleInstagramPostSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ArticleInstagramPost*
+ */
+type ArticleInstagramPostSliceVariation = ArticleInstagramPostSliceDefault;
+
+/**
+ * ArticleInstagramPost Shared Slice
+ *
+ * - **API ID**: `article_instagram_post`
+ * - **Description**: ArticleInstagramPost
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ArticleInstagramPostSlice = prismic.SharedSlice<
+  "article_instagram_post",
+  ArticleInstagramPostSliceVariation
+>;
+
+/**
+ * Item in *BlogArticleGrid → Default → Primary → Pinned Articles*
+ */
+export interface BlogArticleGridSliceDefaultPrimaryPinnedArticlesItem {
+  /**
+   * Pinned Article field in *BlogArticleGrid → Default → Primary → Pinned Articles*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_article_grid.default.primary.pinned_articles[].pinned_article
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  pinned_article: ContentRelationshipFieldWithData<
+    [
+      {
+        id: "article";
+        fields: ["meta_title", "meta_description", "meta_image"];
+      },
+    ]
+  >;
+}
+
+/**
+ * Primary content in *BlogArticleGrid → Default → Primary*
+ */
+export interface BlogArticleGridSliceDefaultPrimary {
+  /**
+   * Section Title field in *BlogArticleGrid → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_article_grid.default.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  section_title: prismic.KeyTextField;
+
+  /**
+   * Category Filter field in *BlogArticleGrid → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_article_grid.default.primary.category_filter
+   * - **Documentation**: https://prismic.io/docs/fields/select
+   */
+  category_filter: prismic.SelectField<
+    "Adozioni" | "Consigli" | "Storie" | "Alimentazione" | "Attività"
+  >;
+
+  /**
+   * Max Articles field in *BlogArticleGrid → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_article_grid.default.primary.max_articles
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  max_articles: prismic.NumberField;
+
+  /**
+   * Show Filters field in *BlogArticleGrid → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: blog_article_grid.default.primary.show_filters
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  show_filters: prismic.BooleanField;
+
+  /**
+   * Show Load More field in *BlogArticleGrid → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: blog_article_grid.default.primary.show_load_more
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  show_load_more: prismic.BooleanField;
+
+  /**
+   * Pinned Articles field in *BlogArticleGrid → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_article_grid.default.primary.pinned_articles[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  pinned_articles: prismic.GroupField<
+    Simplify<BlogArticleGridSliceDefaultPrimaryPinnedArticlesItem>
+  >;
+}
+
+/**
+ * Default variation for BlogArticleGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BlogArticleGridSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogArticleGridSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BlogArticleGrid*
+ */
+type BlogArticleGridSliceVariation = BlogArticleGridSliceDefault;
+
+/**
+ * BlogArticleGrid Shared Slice
+ *
+ * - **API ID**: `blog_article_grid`
+ * - **Description**: BlogArticleGrid
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BlogArticleGridSlice = prismic.SharedSlice<
+  "blog_article_grid",
+  BlogArticleGridSliceVariation
+>;
+
+/**
+ * Primary content in *BlogHero → Default → Primary*
+ */
+export interface BlogHeroSliceDefaultPrimary {
+  /**
+   * Title field in *BlogHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_hero.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *BlogHero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_hero.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for BlogHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BlogHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogHeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BlogHero*
+ */
+type BlogHeroSliceVariation = BlogHeroSliceDefault;
+
+/**
+ * BlogHero Shared Slice
+ *
+ * - **API ID**: `blog_hero`
+ * - **Description**: BlogHero
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BlogHeroSlice = prismic.SharedSlice<
+  "blog_hero",
+  BlogHeroSliceVariation
+>;
+
+/**
+ * Item in *BlogInstagramCta → Default → Primary → Images Section*
+ */
+export interface BlogInstagramCtaSliceDefaultPrimaryImagesSectionItem {
+  /**
+   * Image field in *BlogInstagramCta → Default → Primary → Images Section*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_instagram_cta.default.primary.images_section[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *BlogInstagramCta → Default → Primary*
+ */
+export interface BlogInstagramCtaSliceDefaultPrimary {
+  /**
+   * Title field in *BlogInstagramCta → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_instagram_cta.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *BlogInstagramCta → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_instagram_cta.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button Text field in *BlogInstagramCta → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_instagram_cta.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *BlogInstagramCta → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_instagram_cta.default.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Images Section field in *BlogInstagramCta → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_instagram_cta.default.primary.images_section[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  images_section: prismic.GroupField<
+    Simplify<BlogInstagramCtaSliceDefaultPrimaryImagesSectionItem>
+  >;
+}
+
+/**
+ * Default variation for BlogInstagramCta Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BlogInstagramCtaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogInstagramCtaSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BlogInstagramCta*
+ */
+type BlogInstagramCtaSliceVariation = BlogInstagramCtaSliceDefault;
+
+/**
+ * BlogInstagramCta Shared Slice
+ *
+ * - **API ID**: `blog_instagram_cta`
+ * - **Description**: BlogInstagramCta
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type BlogInstagramCtaSlice = prismic.SharedSlice<
+  "blog_instagram_cta",
+  BlogInstagramCtaSliceVariation
+>;
 
 /**
  * Item in *Hero → Default → Primary → Button*
@@ -745,6 +1450,12 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      ArticleDocument,
+      ArticleDocumentData,
+      ArticleDocumentDataSlicesSlice,
+      BlogHomepageDocument,
+      BlogHomepageDocumentData,
+      BlogHomepageDocumentDataSlicesSlice,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
@@ -752,6 +1463,33 @@ declare module "@prismicio/client" {
       MenuSiteDocumentData,
       MenuSiteDocumentDataNavigationItem,
       AllDocumentTypes,
+      ArticleContentSlice,
+      ArticleContentSliceDefaultPrimaryNotesItem,
+      ArticleContentSliceDefaultPrimary,
+      ArticleContentSliceVariation,
+      ArticleContentSliceDefault,
+      ArticleHeaderSlice,
+      ArticleHeaderSliceDefaultPrimary,
+      ArticleHeaderSliceVariation,
+      ArticleHeaderSliceDefault,
+      ArticleInstagramPostSlice,
+      ArticleInstagramPostSliceDefaultPrimary,
+      ArticleInstagramPostSliceVariation,
+      ArticleInstagramPostSliceDefault,
+      BlogArticleGridSlice,
+      BlogArticleGridSliceDefaultPrimaryPinnedArticlesItem,
+      BlogArticleGridSliceDefaultPrimary,
+      BlogArticleGridSliceVariation,
+      BlogArticleGridSliceDefault,
+      BlogHeroSlice,
+      BlogHeroSliceDefaultPrimary,
+      BlogHeroSliceVariation,
+      BlogHeroSliceDefault,
+      BlogInstagramCtaSlice,
+      BlogInstagramCtaSliceDefaultPrimaryImagesSectionItem,
+      BlogInstagramCtaSliceDefaultPrimary,
+      BlogInstagramCtaSliceVariation,
+      BlogInstagramCtaSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimaryButtonItem,
       HeroSliceDefaultPrimary,

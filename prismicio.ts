@@ -1,6 +1,6 @@
 import {
-  createClient as baseCreateClient,
   type ClientConfig,
+  createClient as baseCreateClient,
   type Route,
 } from "@prismicio/client";
 import { enableAutoPreviews } from "@prismicio/next";
@@ -21,7 +21,8 @@ export const repositoryName =
 const routes: Route[] = [
   // Examples:
   // { type: "homepage", path: "/" },
-  // { type: "blog", path: "/blog/:uid" },
+  { type: "blog_homepage", path: "/blog" },
+  { type: "article", path: "/blog/:uid" },
 ];
 
 /**

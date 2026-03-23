@@ -3,6 +3,12 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  article_content: dynamic(() => import("./ArticleContent")),
+  article_header: dynamic(() => import("./ArticleHeader")),
+  article_instagram_post: dynamic(() => import("./ArticleInstagramPost")),
+  blog_article_grid: dynamic(() => import("./BlogArticleGrid")),
+  blog_hero: dynamic(() => import("./BlogHero")),
+  blog_instagram_cta: dynamic(() => import("./BlogInstagramCta")),
   hero: dynamic(() => import("./Hero")),
   issue_highlight: dynamic(() => import("./IssueHighlight")),
   newsletter: dynamic(() => import("./Newsletter")),

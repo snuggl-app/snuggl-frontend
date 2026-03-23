@@ -1,39 +1,53 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
+import { SliceZone } from "@prismicio/react";
+import { isFilled } from "@prismicio/client";
+import { createClient } from "@/prismicio";
+import { components } from "@/slices";
 
-type Props = {
-  params: { uid: string };
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await fetch(`https://api.vercel.app/blog/${params.uid}`).then(
-    (r) => r.json()
-  );
+export async function generateMetadata(): Promise<Metadata> {
+  const client = createClient();
+  const page = await client.getSingle("blog_homepage");
 
   return {
-    title: post.title,
-    description: post.description,
+    title: page.data.meta_title || "Blog — Snuggl",
+    description: page.data.meta_description,
+    openGraph: page.data.meta_image?.url
+      ? { images: [{ url: page.data.meta_image.url }] }
+      : undefined,
   };
 }
 
-export default function BlogPostPage() {
+export default async function BlogHomePage() {
+  const client = createClient();
+  const page = await client.getSingle("blog_homepage");
+
+  // Fetch articolo in evidenza (dati completi per la card)
+  let featuredArticle = null;
+  if (isFilled.contentRelationship(page.data.featured_article)) {
+    featuredArticle = await client
+      .getByID(page.data.featured_article.id)
+      .catch(() => null);
+  }
+
+  // Fetch articoli per la griglia (prima pagina)
+  const articles = await client.getByType("article", {
+    orderings: [
+      { field: "document.first_publication_date", direction: "desc" },
+    ],
+    pageSize: 12,
+  });
+
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray px-6">
-      <div className="flex flex-col items-center text-center gap-6 max-w-md">
-        <span className="text-6xl">🐾</span>
-        <h1 className="text-4xl font-bold font-fredoka">
-          Il blog sta arrivando!
-        </h1>
-        <p className="text-lg text-green">
-          Stiamo preparando storie di adozioni, consigli e novità dalla
-          community Snuggl. Torna presto!
-        </p>
-        <a
-          href="/"
-          className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-4 font-bold shadow-xl transition-colors"
-        >
-          Torna alla home
-        </a>
-      </div>
-    </main>
+    <div className="bg-gray">
+      <SliceZone
+        slices={page.data.slices}
+        components={components}
+        context={{
+          featuredArticle,
+          articles: articles.results,
+          totalPages: articles.total_pages,
+        }}
+      />
+    </div>
   );
 }

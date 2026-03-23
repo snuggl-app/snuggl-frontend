@@ -1,5 +1,6 @@
 import Header from "@/components/site/Header";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 export default function SiteLayout({
   children,
@@ -11,10 +12,10 @@ export default function SiteLayout({
       <Header />
       <main className="min-h-screen">{children}</main>
       <Footer />
-      <script
+      <Script
         type="text/javascript"
         src="https://embeds.iubenda.com/widgets/49b529b0-feb4-4165-8259-e7fa98fd317f.js"
-      ></script>
+      ></Script>
     </>
   );
 }
