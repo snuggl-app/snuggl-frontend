@@ -38,7 +38,7 @@ export default async function BlogHomePage() {
   });
 
   return (
-    <div className="bg-gray">
+    <div className="bg-gray px-6 py-12 lg:px-40 lg:py-24">
       <SliceZone
         slices={page.data.slices}
         components={components}

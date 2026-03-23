@@ -50,15 +50,24 @@ const Newsletter: FC<NewsletterProps> = ({ slice }) => {
       setMessage("Errore di rete. Controlla la connessione e riprova.");
     }
   };
+  const isContained = slice.variation === "default";
 
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-azure py-12 px-6 lg:py-24 lg:px-40"
+      className={
+        isContained ? "py-12" : "bg-azure py-12 px-6 lg:py-24 lg:px-40"
+      }
       id="newsletter"
     >
-      <div className="container mx-auto max-w-6xl">
+      <div
+        className={
+          isContained
+            ? "container mx-auto max-w-6xl bg-azure rounded-3xl py-16 px-6 lg:px-16"
+            : "container mx-auto max-w-6xl"
+        }
+      >
         <div className="flex flex-col items-center text-center gap-8">
           <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
             <Mail className="w-8 h-8 text-white" />

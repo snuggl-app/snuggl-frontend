@@ -82,9 +82,9 @@ const BlogArticleGrid: FC<SliceComponentProps<any, BlogContext>> = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-gray py-16"
+      className="py-12"
     >
-      <div className="container mx-auto max-w-6xl px-6">
+      <div className="container max-w-6xl mx-auto">
         {/* Titolo sezione */}
         {slice.primary.section_title && (
           <h2 className="text-3xl font-heading font-semibold text-foreground mb-8">

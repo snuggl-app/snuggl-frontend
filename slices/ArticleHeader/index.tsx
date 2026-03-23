@@ -98,7 +98,7 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({ slice }) => {
         </div>
       </div>
 
-      {/* Hero image — più larga del testo */}
+      {/* Hero image — più larga del testo
       {hero_image?.url && (
         <div className="max-w-5xl mx-auto px-6">
           <PrismicNextImage
@@ -106,7 +106,7 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({ slice }) => {
             className="w-full rounded-3xl object-cover max-h-[480px]"
           />
         </div>
-      )}
+      )}*/}
     </section>
   );
 };

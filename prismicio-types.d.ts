@@ -1236,9 +1236,85 @@ export type NewsletterSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Newsletter → Full Width → Primary*
+ */
+export interface NewsletterSliceFullWidthPrimary {
+  /**
+   * Title field in *Newsletter → Full Width → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: newsletter.fullWidth.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *Newsletter → Full Width → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: newsletter.fullWidth.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Email Placeholder field in *Newsletter → Full Width → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: newsletter.fullWidth.primary.email_placeholder
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  email_placeholder: prismic.KeyTextField;
+
+  /**
+   * Button text field in *Newsletter → Full Width → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: newsletter.fullWidth.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  button_text: prismic.KeyTextField;
+
+  /**
+   * Button link field in *Newsletter → Full Width → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: newsletter.fullWidth.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Full Width variation for Newsletter Slice
+ *
+ * - **API ID**: `fullWidth`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type NewsletterSliceFullWidth = prismic.SharedSliceVariation<
+  "fullWidth",
+  Simplify<NewsletterSliceFullWidthPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Newsletter*
  */
-type NewsletterSliceVariation = NewsletterSliceDefault;
+type NewsletterSliceVariation =
+  | NewsletterSliceDefault
+  | NewsletterSliceFullWidth;
 
 /**
  * Newsletter Shared Slice
@@ -1501,8 +1577,10 @@ declare module "@prismicio/client" {
       IssueHighlightSliceDefault,
       NewsletterSlice,
       NewsletterSliceDefaultPrimary,
+      NewsletterSliceFullWidthPrimary,
       NewsletterSliceVariation,
       NewsletterSliceDefault,
+      NewsletterSliceFullWidth,
       SolutionStepsSlice,
       SolutionStepsSliceDefaultPrimary,
       SolutionStepsSliceDefaultItem,

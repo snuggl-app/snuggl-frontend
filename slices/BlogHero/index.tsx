@@ -45,9 +45,9 @@ const BlogHero: FC<BlogHeroProps> = ({ slice, context }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="pt-12 pb-16"
+      className="pb-12"
     >
-      <div className="container mx-auto max-w-6xl px-6">
+      <div className="container max-w-6xl mx-auto">
         {/* Hero text */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-heading font-semibold text-foreground mb-4">

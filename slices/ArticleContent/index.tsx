@@ -108,7 +108,7 @@ const ArticleContent: FC<ArticleContentProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="max-w-3xl mx-auto px-6 py-8"
+      className="max-w-3xl mx-auto px-6 pb-8"
     >
       {/* Corpo articolo */}
       {isFilled.richText(content) && (

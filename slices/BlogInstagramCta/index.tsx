@@ -18,15 +18,15 @@ const BlogInstagramCta: FC<BlogInstagramCtaProps> = ({ slice }) => {
   const images = slice.items || [];
 
   return (
-    <section className="py-16 px-6">
-      <div className="max-w-7xl mx-auto bg-azure rounded-3xl bg-gradient-to-br from-purple-100 via-pink-100 to-orange-100 p-10 md:p-14">
-        <div className=" ">
-          <div className="w-14 h-14 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-4">
+    <section className="py-12">
+      <div className="container max-w-6xl mx-auto bg-gradient-to-br from-purple-100 via-pink-100 to-orange-100 rounded-4xl p-8 lg:p-14">
+        <div className="flex flex-col justify-center items-center gap-4">
+          <div className="w-14 h-14 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 rounded-full flex items-center justify-center mx-auto ">
             <Instagram className="w-7 h-7 text-white" />
           </div>
 
           {slice.primary.title && (
-            <h2 className="text-3xl font-heading font-semibold text-foreground mb-3">
+            <h2 className="text-3xl font-heading font-semibold text-foreground">
               {slice.primary.title}
             </h2>
           )}
@@ -59,7 +59,7 @@ const BlogInstagramCta: FC<BlogInstagramCtaProps> = ({ slice }) => {
 
         {/* CTA button */}
         {slice.primary.button_text && (
-          <div className="text-center">
+          <div className="text-center mt-4">
             <Link
               href={asLink(slice.primary.button_link) || "#"}
               className="inline-flex items-center gap-2 bg-black hover:bg-primary/90 text-white rounded-full px-8 py-3 font-bold transition-colors"

@@ -1,43 +1,94 @@
 [
-  {
-    "__TYPE__": "SharedSliceContent",
-    "variation": "default",
-    "primary": {
-      "title": {
-        "__TYPE__": "FieldContent",
-        "value": "Resta aggiornato sulle adozioni",
-        "type": "Text"
-      },
-      "description": {
-        "__TYPE__": "StructuredTextContent",
-        "value": [
-          {
-            "type": "paragraph",
-            "content": {
-              "text": "Iscriviti alla nostra newsletter per ricevere aggiornamenti sugli animali disponibili per l'adozione e storie di successo.",
-              "spans": []
-            }
-          }
-        ]
-      },
-      "email_placeholder": {
-        "__TYPE__": "FieldContent",
-        "value": "Il tuo indirizzo email",
-        "type": "Text"
-      },
-      "button_text": {
-        "__TYPE__": "FieldContent",
-        "value": "Iscriviti",
-        "type": "Text"
-      },
-      "button_link": {
-        "__TYPE__": "LinkContent",
-        "value": {
-          "link_type": "Web",
-          "url": "#"
-        }
-      }
-    },
-    "items": []
-  }
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "mysterious",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliquip amet nulla ex est nulla proident nulla. Dolore deserunt magna laboris minim ex. Proident dolore dolor tempor velit do do laboris dolore sint ex quis culpa."
+						}
+					}
+				]
+			},
+			"email_placeholder": {
+				"__TYPE__": "FieldContent",
+				"value": "flight",
+				"type": "Text"
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "voice",
+				"type": "Text"
+			},
+			"button_link": {
+				"key": "0693c3ca-8c93-42af-9451-ea944afa1189",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "fullWidth",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "recall",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Esse adipisicing Lorem nulla sint commodo ullamco adipisicing fugiat sit do elit Lorem."
+						}
+					}
+				]
+			},
+			"email_placeholder": {
+				"__TYPE__": "FieldContent",
+				"value": "mathematics",
+				"type": "Text"
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "son",
+				"type": "Text"
+			},
+			"button_link": {
+				"key": "85993432-28ac-4320-a4fd-9a943f923f59",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
 ]
