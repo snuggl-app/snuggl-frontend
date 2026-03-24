@@ -25,7 +25,7 @@ const ArticleInstagramPost: FC<ArticleInstagramPostProps> = ({ slice }) => {
     >
       <div className="flex items-center justify-between gap-4 bg-azure rounded-2xl px-6 py-5">
         {/* Left: icon + testi */}
-        <div className="flex items-start gap-4">
+        <div className="flex items-center gap-4">
           <div className="shrink-0 w-9 h-9 rounded-full bg-white flex items-center justify-center">
             <Instagram className="w-4 h-4 text-primary" />
           </div>
