@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fredoka, Urbanist } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 export const fredoka = Fredoka({
   subsets: ["latin"],
@@ -28,6 +29,12 @@ export default function RootLayout({
     <html lang="it">
       <body className={`${fredoka.variable} ${urbanist.variable} antialiased`}>
         {children}
+        <Script
+          defer
+          data-domain="snuggl.app"
+          src="https://analytics.davidelista.com/js/script.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
