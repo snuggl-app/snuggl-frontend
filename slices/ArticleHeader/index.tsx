@@ -85,13 +85,13 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({ slice }) => {
           )}
           {published_at && (
             <>
-              <span>·</span>
+              <span className="w-1 h-1 bg-current rounded-full inline-block"></span>
               <span>{published_at}</span>
             </>
           )}
           {read_time && (
             <>
-              <span>·</span>
+              <span className="w-1 h-1 bg-current rounded-full inline-block"></span>
               <span>{read_time} min di lettura</span>
             </>
           )}
