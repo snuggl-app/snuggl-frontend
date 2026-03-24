@@ -4,7 +4,6 @@ import MobileMenu from "@/components/ui/MobileMenu";
 
 const blogLinks = [
   { href: "/blog", label: "Tutti i post" },
-  { href: "/blog/categorie", label: "Categorie" },
   { href: "/", label: "← Torna al sito" },
 ];
 
