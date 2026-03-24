@@ -21,18 +21,18 @@ const ArticleInstagramPost: FC<ArticleInstagramPostProps> = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="max-w-3xl mx-auto px-6 py-6"
+      className="max-w-3xl mx-auto px-6"
     >
       <div className="flex items-center justify-between gap-4 bg-azure rounded-2xl px-6 py-5">
         {/* Left: icon + testi */}
         <div className="flex items-start gap-4">
-          <div className="shrink-0 w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
+          <div className="shrink-0 w-9 h-9 rounded-full bg-white flex items-center justify-center">
             <Instagram className="w-4 h-4 text-primary" />
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-1">
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-black mb-1">
               Dalla nostra community
-            </p>
+            </h2>
             {instagram_text && (
               <p className="text-sm text-muted-foreground leading-snug">
                 {instagram_text}

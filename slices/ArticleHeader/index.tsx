@@ -77,7 +77,7 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({ slice }) => {
           {author_avatar?.url && (
             <PrismicNextImage
               field={author_avatar}
-              className="w-9 h-9 rounded-full object-cover shrink-0"
+              className="w-9 h-9 rounded-full object-cover shrink-0 object-top"
             />
           )}
           {author_name && (
