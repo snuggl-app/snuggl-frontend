@@ -26,7 +26,7 @@ const BlogInstagramCta: FC<BlogInstagramCtaProps> = ({ slice }) => {
           </div>
 
           {slice.primary.title && (
-            <h2 className="text-3xl font-heading font-semibold text-foreground">
+            <h2 className="text-3xl font-heading font-semibold text-foreground text-center">
               {slice.primary.title}
             </h2>
           )}
